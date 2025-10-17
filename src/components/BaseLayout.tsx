@@ -18,7 +18,7 @@ export default function BaseLayout({
     <div className="flex min-h-screen flex-col">
       {!disableHeader && <Header />}
 
-      <main className={clsx('flex-1 max-w-5xl mx-auto p-4', className)}>
+      <main className={clsx('flex-1 max-w-2xl w-full mx-auto p-1', className)}>
         <Outlet />
       </main>
 
