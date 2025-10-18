@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Demo from '@/pages/Demo'
 import NotFound from '@/pages/NotFound'
 import BaseLayout from '@/components/BaseLayout'
-import Ladin from '@/pages/Ladin'
+import Ladin from '@/pages/ladin/Ladin'
 
 function App() {
   return (

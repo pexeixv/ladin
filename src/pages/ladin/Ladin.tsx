@@ -1,20 +1,21 @@
 import { Separator } from '@/components/ui/separator'
 import { LadinJSON } from '@/data/ladin'
 import { cn } from '@/lib/utils'
+import PrompterMode from './prompter-mode/PrompterMode'
 
 function Ladin() {
   return (
-    <section>
-      <div className="container mx-auto py-10">
+    <section className="relative">
+      <div className="container py-10 max-w-2xl w-full mx-auto p-1">
         <h1 className="font-bold text-4xl text-center">Ladin</h1>
-        <div className="mt-16 grid gap-4 ">
+        <div className="mt-16 grid">
           {LadinJSON.map((line) => (
             <>
               <Separator />
               <div
                 id={`line-${line.id}`}
                 className={cn(
-                  'flex items-start justify-between py-1 px-3 rounded-sm transition-colors duration-300 bg-transparent gap-8',
+                  'flex items-start justify-between p-4 rounded-sm transition-colors duration-300 bg-transparent',
 
                   {
                     'dark:text-blue-300 text-blue-600 hover:bg-blue-50 hover:dark:bg-blue-950':
@@ -34,6 +35,7 @@ function Ladin() {
           ))}
         </div>
       </div>
+      <PrompterMode />
     </section>
   )
 }

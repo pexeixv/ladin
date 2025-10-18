@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import clsx from 'clsx'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import { cn } from '@/lib/utils'
 
 type BaseLayoutProps = {
   disableHeader?: boolean
@@ -18,7 +18,7 @@ export default function BaseLayout({
     <div className="flex min-h-screen flex-col">
       {!disableHeader && <Header />}
 
-      <main className={clsx('flex-1 max-w-2xl w-full mx-auto p-1', className)}>
+      <main className={cn('flex-1', className)}>
         <Outlet />
       </main>
 
