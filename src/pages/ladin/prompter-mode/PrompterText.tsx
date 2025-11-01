@@ -30,7 +30,7 @@ function PrompterLine({ value, onClick }: { value: number; onClick: () => void }
         {LadinJSON[value]?.text || ''}
       </span>
       <span className="mt-2 text-lg text-white/60">{LadinJSON[value]?.response || ''}</span>
-      <span className="text-[150rem] font-black opacity-5 absolute -rotate-12 right-8 top-0">
+      <span className="text-[160px] font-black opacity-10 absolute -rotate-12 left-4 top-0">
         {LadinJSON[value]?.group === 'A' && '1'}
         {LadinJSON[value]?.group === 'B' && '2'}
       </span>

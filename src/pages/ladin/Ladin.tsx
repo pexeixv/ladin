@@ -15,7 +15,7 @@ function Ladin() {
               <div
                 id={`line-${line.id}`}
                 className={cn(
-                  'flex items-start justify-between p-4 rounded-sm transition-colors duration-300 bg-transparent',
+                  'flex items-start justify-between p-4 rounded-sm transition-colors duration-300 bg-transparent gap-8',
 
                   {
                     'dark:text-blue-300 text-blue-600 hover:bg-blue-50 hover:dark:bg-blue-950':
@@ -28,8 +28,13 @@ function Ladin() {
                 )}
                 key={line.id}
               >
-                <span className="max-w-4/10">{line.text}</span>
-                <span className="text-right max-w-4/10">{line.response}</span>
+                <div className="flex gap-2 w-full max-w-4/10">
+                  <span className="font-black opacity-30 text-[20px] relative bottom-1">
+                    {line.group === 'A' ? '1' : line.group === 'B' && '2'}
+                  </span>
+                  <span className="">{line.text}</span>
+                </div>
+                <span className="text-right max-w-4/10 w-fit">{line.response}</span>
               </div>
             </>
           ))}

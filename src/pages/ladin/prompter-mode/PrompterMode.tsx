@@ -27,7 +27,7 @@ function PrompterMode() {
       <AlertDialogTrigger>
         <Tooltip>
           <TooltipTrigger asChild className="fixed bottom-8 right-8">
-            <Button variant="outline" size="icon" className="rounded-full cursor-pointer">
+            <Button variant="secondary" size="icon" className="rounded-full cursor-pointer">
               <Maximize2Icon />
             </Button>
           </TooltipTrigger>
