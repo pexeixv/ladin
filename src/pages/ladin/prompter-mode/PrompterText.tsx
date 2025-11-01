@@ -1,11 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LadinJSON } from '@/data/ladin.ts'
 import { cn } from '@/lib/utils'
 
 export default function PrompterText() {
   const [counter, setCounter] = useState(0)
   const increment = () => setCounter(Math.min(LadinJSON.length - 1, counter + 1))
-  const decrement = () => setCounter(Math.max(0, counter - 1))
+  const decrement = () => setCounter((c) => Math.max(0, c - 1))
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault()
+        setCounter((c) => Math.min(LadinJSON.length - 1, c + 1))
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault()
+        setCounter((c) => Math.max(0, c - 1))
+      }
+    }
+
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   return (
     <section className="flex-1 overflow-auto flex flex-col">

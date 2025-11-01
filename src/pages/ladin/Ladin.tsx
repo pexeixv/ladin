@@ -2,8 +2,13 @@ import { Separator } from '@/components/ui/separator'
 import { LadinJSON } from '@/data/ladin'
 import { cn } from '@/lib/utils'
 import PrompterMode from './prompter-mode/PrompterMode'
+import { useEffect } from 'react'
 
 function Ladin() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <section className="relative">
       <div className="container py-10 max-w-2xl w-full mx-auto p-1">

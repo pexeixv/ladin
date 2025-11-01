@@ -15,11 +15,12 @@ function PrompterMode() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    if (!open) {
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-      }, 0)
+    if (!open) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
     }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [open])
 
   return (
